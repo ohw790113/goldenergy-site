@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>황금에너지</title>
+  <meta charset="UTF-8">
+  <title>골드에너지 시공사례</title>
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    header, footer { background: gold; color: #000; padding: 1rem; text-align: center; }
-    .images { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 1rem; }
-    .images img { width: 300px; height: auto; border-radius: 8px; box-shadow: 2px 2px 10px #ccc; }
-    .contact { text-align: center; margin: 1rem 0; }
-    a { color: blue; }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #005b9e; /* 진한 파랑 */
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #e0e7ef; /* 파란 계열 연한 배경 */
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #005b9e; /* 파란색 텍스트 */
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>황금에너지</h1>
-    <p>대표: 정경래 | 전화: 010-9791-2346 | 고객센터: <a href="tel:1544-0000">1544-0000</a></p>
-    <p>주소: 경북 상주시 화북면 214</p>
+    골드에너지 시공사례
   </header>
 
-  <div class="images">
-    <img src="공터발설치.jpg" alt="공터발설치">
-    <img src="긴정치마설치.jpg" alt="긴정치마설치">
-    <img src="붉은 지붕처마 설치.jpg" alt="붉은 지붕처마 설치">
-    <img src="옥상설치.jpg" alt="옥상설치">
-    <img src="인버터줄줄이.jpg" alt="인버터줄줄이">
-    <img src="주차장설치.jpg" alt="주차장설치">
-    <img src="지붕설치 (2).jpg" alt="지붕설치2">
-    <img src="지붕설치.jpg" alt="지붕설치">
-    <img src="차고설치.jpg" alt="차고설치">
-    <img src="창고 옆 처마설치.jpg" alt="창고 옆 처마설치">
-    <img src="푸른잔디 옥상설치.jpg" alt="푸른잔디 옥상설치">
-    <img src="하얀집 앞 차고설치.jpg" alt="하얀집 앞 차고설치">
-    <img src="황색지붕 처마 설치.jpg" alt="황색지붕 처마 설치">
-  </div>
-
-  <div class="contact">
-    <p>📸 <a href="https://www.instagram.com/golden_energy79" target="_blank">인스타그램 보기</a></p>
+  <div class="container">
+    <div class="gallery">
+      <img src="img/solar1.jpg" alt="시공1">
+      <img src="img/solar2.jpg" alt="시공2">
+      <img src="img/solar3.jpg" alt="시공3">
+      <img src="img/solar4.jpg" alt="시공4">
+      <img src="img/solar5.jpg" alt="시공5">
+      <img src="img/solar6.jpg" alt="시공6">
+    </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 황금에너지. All rights reserved.</p>
+    ⓒ 2025 골드에너지 | 010-9791-2346
   </footer>
+
 </body>
 </html>

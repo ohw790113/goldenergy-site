@@ -47,17 +47,28 @@
     ul.nav-links li a:hover {
       color: #007bff;
     }
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 80vh;
-      background: url('images/hero.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
+   .hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.hero .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
     .hero h1 {
       font-size: 3rem;
       text-align: center;
@@ -99,6 +110,13 @@
   </header>
 
   <section class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="videos/hero.mp4" type="video/mp4" />
+   
+  </video>
+  <h1>태양광 에너지로<br/>더 나은 내일을 만듭니다</h1>
+</section>
+
     <h1>태양광 에너지로<br/>더 나은 내일을 만듭니다</h1>
   </section>
 

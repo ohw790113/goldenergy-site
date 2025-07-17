@@ -1,81 +1,144 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>태양광 영상 배경</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>골드에너지</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Pretendard', sans-serif;
     }
-
-    body, html {
-      height: 100%;
-      overflow: hidden;
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
     }
-
-    #video-container {
-      position: fixed;
+    header {
+      background-color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
+      z-index: 1000;
     }
-
-    video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007bff;
+    }
+    ul.nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+    ul.nav-links li a {
+      text-decoration: none;
+      color: #212529;
+      font-weight: 500;
+    }
+    ul.nav-links li a:hover {
+      color: #007bff;
+    }
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
 
-    .content {
-      position: relative;
-      z-index: 1;
-      color: white;
+
+.hero .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+    .hero h1 {
+      font-size: 3rem;
       text-align: center;
-      padding: 20px;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2rem;
+      color: #007bff;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    footer {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
     }
   </style>
 </head>
 <body>
-  <div id="video-container">
-    <video id="bg-video" autoplay muted playsinline></video>
-  </div>
+  <header>
+    <nav>
+      <div class="logo">GOLD ENERGY</div>
+      <ul class="nav-links">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">설치사례</a></li>
+        <li><a href="#">문의하기</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="content">
-    <h1>골드에너지</h1>
-    <p>태양광 설치로 집과 차량을 동시에 충전하세요!</p>
-  </div>
+  <section class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="videos/hero.mp4" type="video/mp4" />
+   
+  </video>
+  <h1>태양광 에너지로<br/>더 나은 내일을 만듭니다</h1>
+</section>
 
-  <script>
-    const videoList = [
-      "태양광대덕영상 붉은 이층지붕.mp4",
-      "태양광 설치완료.mp4",
-      "태양광주택투자영상1.mp4",
-      "태양광주택.mp4"
-    ];
+    <h1>태양광 에너지로<br/>더 나은 내일을 만듭니다</h1>
+  </section>
 
-    let currentVideo = 0;
-    const bgVideo = document.getElementById("bg-video");
+  <section class="section">
+    <h2>골드에너지 소개</h2>
+    <p>
+      골드에너지는 친환경 에너지 솔루션을 통해 지속 가능한 미래를 만듭니다.<br/>
+      태양광 발전 시스템, 전기차 충전소 설치까지 고객의 삶을 스마트하게 변화시키는 기술을 제공합니다.
+    </p>
+  </section>
 
-    function playNextVideo() {
-      bgVideo.src = videoList[currentVideo];
-      bgVideo.load();
-      bgVideo.play();
+  <section class="section">
+    <h2>설치사례</h2>
+    <p>
+      다양한 주택 및 상업시설에 설치된 태양광 및 전기차 충전 솔루션을 확인해보세요.
+      품질과 디자인을 모두 만족시킨 성공적인 사례들이 기다리고 있습니다.
+    </p>
+  </section>
 
-      currentVideo = (currentVideo + 1) % videoList.length;
-    }
-
-    bgVideo.addEventListener("ended", playNextVideo);
-
-    // 첫 영상 재생
-    playNextVideo();
-  </script>
+  <footer>
+    <p>© 2025 GOLD ENERGY. All rights reserved. | 고객센터 010-9791-2346</p>
+  </footer>
 </body>
 </html>
